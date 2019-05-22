@@ -25,7 +25,11 @@ module.exports = {
         })
         .catch(err => res.serverError(err));
     },
-    find(req,res){},
+    find(req,res){
+        Products.find()
+        .then(products=>res.ok(products))
+        .catch(err => res.notFound(err));
+    },
     delete(req,res){},
     update(req,res){}
     
