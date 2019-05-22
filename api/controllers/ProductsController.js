@@ -51,6 +51,29 @@ module.exports = {
             res.ok(products);
         })
         .catch(err=> res.serverError(err));
+    },
+    checkStockAvaliable(req,res)
+    {
+        let attributes={};
+        if(req.param('UnitsInStock'))
+        {
+            attributes.UnitsInStock=req.param('UnitsInStock')
+        }
+        var finn=Products.findOne({
+            ProductID: req.params.ProductID
+
+        });
+        if(attributes.UnitsInStock>finn.UnitsInStock)
+        {
+            sails.log('verdadero');
+            return false;
+        }
+        else
+        {
+            sails.log('falso');
+            return false;
+        }
+
     }
     
   
