@@ -27,8 +27,9 @@ module.exports = {
     ProductID: {
       type: 'integer',
       unique: true,
-      autoIncrement: true,
-      columnName: 'ProductID'
+    
+      columnName: 'ProductID',
+      
     },
     ProductName:{
       type: 'string',
@@ -44,7 +45,7 @@ module.exports = {
     },
     QuantityPerUnit:{
       type: 'string',
-      columnName: ' QuantityPerUnit'
+      columnName: 'QuantityPerUnit'
     },
     UnitPrice:{
       type: 'integer',
