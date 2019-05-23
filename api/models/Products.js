@@ -25,8 +25,7 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     ProductID: {
-      type: 'integer',
-      unique: true,
+      type: 'integer',      
     
       columnName: 'ProductID',
       

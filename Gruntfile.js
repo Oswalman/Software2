@@ -19,5 +19,28 @@ module.exports = function(grunt) {
   // Load Grunt task configurations (from `tasks/config/`) and Grunt
   // task registrations (from `tasks/register/`).
   loadGruntTasks(__dirname, grunt);
+  grunt.initConfig({
+
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['test/**/*.spec.js']
+      }
+    },
+
+
+});
+
+loadGruntTasks(__dirname, grunt);
+
+ // Mocha tests  
+ grunt.loadNpmTasks('grunt-mocha-istanbul');
+
+ // Unit testing
+ grunt.registerTask('test', [
+   'mocha_istanbul:coverage'
+]);
 
 };
