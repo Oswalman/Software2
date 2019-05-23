@@ -9,12 +9,12 @@ describe('The ValidateStock', function () {
 it('should return true if Product with ProductID = X is less than QuantityToBuy = Y in stock', function (done) {
 
   var idproduct = 1
-  var quantity = 4
+  var quantity = 11
 
   stockService
-  .verifyStock(idproduct,quantity)
+  .discountOnStockSale(idproduct,quantity)
   .then(function (result) {
-    result.should.equal(false);
+    result.should.equal(44);
     done();
   })
   .catch(done);

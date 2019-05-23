@@ -18,10 +18,22 @@ module.exports = {
       },
 
       discountOnStockSale: async function discount(idProd, quantity) {
+
+        var result = await Products.findOne(idProd);
+
+        if(quantity>(result.UnitsInStock/2) && quantity > 10)
+        {
+          
+          var calcular= (result.UnitPrice*quantity)-(result.UnitPrice*quantity*0.2);
+
+        }
+        else
+        {
+          var calcular= result.UnitPrice*quantity;
+        }
   
-        var result = await Products.findOne(idProd)
-        var calcular= result.UnitPrice*quantity;
-     
+        
+        
         return calcular;
        
   
