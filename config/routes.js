@@ -38,5 +38,6 @@ module.exports.routes = {
   'PUT /products' : 'ProductsController.update',
   'DELETE /products' : 'ProductsController.delete',
   'POST /products/buy': 'ProductsController.buy',
+  'POST /products/show': 'ProductsController.price'
 
 };
