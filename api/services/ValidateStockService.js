@@ -21,7 +21,7 @@ module.exports = {
   
         var result = await Products.findOne(idProd)
         var calcular= result.UnitPrice*quantity;
-        sails.log(calcular);
+     
         return calcular;
        
   

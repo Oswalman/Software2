@@ -71,12 +71,12 @@ module.exports = {
     },
 
     price: async function(req, res) {
-        sails.log("price");
+  
     
         var response = await ValidateStockService.discountOnStockSale(  req.param('ProductID') , req.param('Units') );
 
        // let response = await sails.helpers.validateStock.with( {id : req.param('productid') , quantity: req.param('productquantity') });
-       sails.log(response);
+      
        return res.json(response);
 
     }
