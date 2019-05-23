@@ -79,6 +79,43 @@ module.exports = {
       
        return res.json(response);
 
+    },
+
+    verify: async function(req,res)
+    {
+        
+     
+        var response =await ValidateStockService.verifyStock( req.param('ProductID') , req.param('UnitsInStock'));
+        var finn = await Products.findOne({
+
+            ProductID:req.param('ProductID')
+          });
+
+          
+       
+        var calculo=finn.UnitsInStock - req.param('UnitsInStock');
+      
+        
+        if(response){
+            Products.update({
+                ProductID:req.param('ProductID')
+            },
+            {
+                UnitsInStock:calculo
+            }
+            )
+            .then(products=>{
+                res.ok(products);
+            })
+            .catch(err=> res.serverError(err));
+
+        }
+        else{
+            sails.log("No hay stock");
+
+        }
+       
+
     }
 
 
