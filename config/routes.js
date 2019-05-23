@@ -37,6 +37,6 @@ module.exports.routes = {
   'GET /products' : 'ProductsController.find',
   'PUT /products' : 'ProductsController.update',
   'DELETE /products' : 'ProductsController.delete',
-  'GET /functions': 'ProductsController.checkStockAvaliable',
+  'POST /products/buy': 'ProductsController.buy',
 
 };

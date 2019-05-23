@@ -52,6 +52,30 @@ module.exports = {
         })
         .catch(err=> res.serverError(err));
     },
+    buy: async function (req, res) {
+    
+        var response = await ValidateStockService.verifyStock(  req.param('ProductID') , req.param('UnitsInStock') );
+
+       // let response = await sails.helpers.validateStock.with( {id : req.param('productid') , quantity: req.param('productquantity') });
+
+        if(response){
+            sails.log("En Stock "+response);
+            return res.json(response);
+
+        }else{
+            sails.log("No hay stock");
+            return res.json(response);
+
+        }
+
+    },
+
+
+
+
+
+
+    /*
     checkStockAvaliable(req,res)
     {
         let attributes={};
@@ -74,7 +98,7 @@ module.exports = {
             return false;
         }
 
-    }
+    }*/
     
   
 
