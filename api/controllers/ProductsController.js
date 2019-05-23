@@ -94,7 +94,7 @@ module.exports = {
           
        
         var calculo=finn.UnitsInStock - req.param('UnitsInStock');
-      
+        sails.log("Nuevo total "+calculo);
         
         if(response){
             Products.update({
